@@ -1,0 +1,367 @@
+:root {
+    --star-gold: #ffce3e;
+    --primay-color:#ee4d2d;
+    --white-color: #fff;
+    --black-color: #000;
+    --text-color: #333;
+    --border-color:#DBDBDB;
+    --navbar-height: 48.5px;
+    --header-height: 120px;
+    --header-with-search-height:calc(var(--header-height) - var(--navbar-height));
+    --header__sort-bar-height: 46px;
+}
+* {
+    box-sizing: inherit;/*kế thừa thẻ chứa nó */
+}
+html {
+    font-size: 62.5%;
+    line-height: 1.6rem;
+    font-family: 'Roboto', sans-serif;
+    box-sizing: border-box;
+}
+/*responsive* begin*/
+.grid__row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: -5px;
+    margin-right: -5px;
+}
+/*responsive* end*/
+/* test */
+.grid__column-2 {
+    padding-left: 5px;
+    padding-right: 5px;
+    width: 16.6667%;
+}
+.grid__column-10 {
+    padding-left: 5px;
+    padding-right: 5px;
+    width: 83.3333%;
+}
+.grid__column-2-4 {
+    padding-left: 5px;
+    padding-right: 5px;
+    width: 20%;
+}
+/* Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }to {
+        opacity: 1;
+    }
+}
+@keyframes growth {
+    from {
+        transform: scale(--growth-from);
+
+    }to {
+        transform: scale(--growth-to);
+
+    }
+}
+
+/*modal */
+.modal {
+    position: fixed;
+    top:0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    display: flex;
+    animation: fadeIn linear 0.1s;
+}
+.modal__overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.4);
+}
+.modal__body {
+    margin: auto;
+    background-color: var(--white-color);
+    position: relative;
+    /*dưa body lên trên delay*/
+    z-index: 1;
+    --growth-from: 0.7;
+    --growth-to: 0.1;
+    animation: growth linear 1s;
+}
+.auth-form {
+    width: 500px;
+    background-color: var(--white-color);
+    border-radius: 5px;
+    /* con vượt quá ẩn đi over flow*/
+    overflow: hidden;
+}
+.auth-form-container {
+    padding: 0 32px;
+}
+.auth-form__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 12px;
+    margin-top: 10px;
+}
+.auth-form__heading {
+    font-size: 2.2rem;
+    color: var(--text-color);
+}
+.auth-form__switch-btn {
+    font-size: 1.6rem;
+    font-weight: 400;
+    color: var(--primay-color);
+    cursor: pointer;
+}
+.auth-form__input {
+    width: 100%;
+    height: 40px;
+    margin-top: 16px;
+    font-size: 1.4rem;
+    border: 1px solid var(--border-color);
+    border-radius: 2px;
+    /*bỏ viền input*/
+    outline: none;
+}
+/* chuột có hành động nhấp nháy gọi là focus còn focus gọi lớp giả*/
+.auth-form__input:focus {
+    border-color: #7777;
+}
+.auth-form__aside {
+    margin-top: 18px;
+   
+}
+.auth-form__policy-text {
+    padding: 0 12px;
+    font-size: 1.2rem;
+    line-height: 1.8rem;
+    text-align: center;
+}
+.auth-form__link {
+    text-decoration: none;
+    color: var(--primay-color);
+}
+.auth-form__controls {
+    margin-top: 80px;
+    display: flex;
+    justify-content: flex-end;
+}
+.auth-form__control-backform {
+    margin-right: 8px;
+}
+
+/* button form */
+.btn {
+    min-width: 124px;
+    height: 36px;
+    text-decoration: none;
+    border: none;
+    border-radius: 2px;
+    font-size: 1.5rem;
+    padding: 0 8px;
+    cursor: pointer;
+    color: var(--text-color);
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    line-height: 1.6rem;
+    background-color: var(--white-color);
+}
+.btn.btn-normal:hover {
+    background-color: rgba(0,0,0,0.5);
+}
+.btn.btn--primary {
+    background-color: var(--primay-color);
+    color: var(--white-color);
+}
+.btn.btn-size-s {
+    height: 32px;
+    font-size: 12px;
+}
+.auth-form__socials {
+    background-color: #f5f5f5;
+    padding: 16px 36px;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 22px;
+}
+.auth-form__socials-icon {
+    font-size: 1.8rem;
+}
+.auth-form__socials-facebook {
+    color: var(--white-color);
+    background-color: #3A5A98;
+}
+.auth-form__socials-facebook
+.auth-form__socials-icon {
+    color: var(--white-color);
+
+}
+.auth-form__socials-title {
+    margin: 0 36px
+}
+.auth-form__socials-google {
+    background-color: var(--white-color);
+    color: #666;
+}
+.auth-form__help {
+    display: flex;
+    justify-content: flex-end;
+}
+.auth-form__help-link {
+    text-decoration: none;
+    font-size: 1.4rem;
+    color: #939393;
+}
+.auth-form__help-saparet {
+    display: block;
+    border: 1px solid #EAEAEA;
+    height: 22px;
+    margin: -3px 16px 0;
+}
+.auth-form__help-fogert {
+    color: var(--primay-color);
+}
+/*select*/
+.select-input {
+    min-width: 200px;
+    height: 34px;
+    padding: 0 12px;
+    border-radius: 2px;
+    background-color: var(--white-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+.select-input__label {
+    font-size: 1.4rem;
+}
+.select-input__icon {
+    font-size: 1.4rem;
+    color: rgb(131,131,131,131);
+    position: relative;
+    top: 1px;
+}
+.select-input__list {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 24px;
+    border-radius: 2px;
+    background-color: var(--white-color);
+    list-style: none;
+    padding: 10px 16px;
+    display: none;
+    z-index: 1;
+}
+.select-input__link {
+    text-decoration: none;
+    font-size: 1.4rem;
+    color: var(--text-color);
+    display: block;
+    padding: 5px 0;
+}
+.select-input__link:hover {
+    color: var(--primay-color);
+}
+.select-input:hover .select-input__list {
+    display: block;
+}
+.home-product-panigation {
+    margin: 48px 0 32px;
+    padding-left:0;
+}
+.panigation {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    list-style: none;
+} 
+.panigation-item{ 
+    margin: 0 13px;
+}
+.panigation-item-link {
+    --height:30px;
+    display: block;
+    text-decoration: none;
+    font-size: 2rem;
+    font-weight: 300;
+    color: #939393;
+    min-width: 40px;
+    height: var(--height);
+    line-height: var(--height);
+    text-align: center;
+}
+.panigation-item-active.panigation-item-link {
+    background-color: var(--primay-color);
+    color: var(--white-color);
+}
+.panigation-item-active.panigation-item-link:hover {
+    background-color: #ed5c3f;
+}
+.footer {
+    padding-top: 16px;
+    border-top: 4px solid var(--primay-color);
+    background-color: var(--white-color);
+}
+.footer__heading {
+    font-size: 1.4rem;
+    text-transform: uppercase;
+    color: var(--text-color);
+}
+.footer__list {
+    padding-left: 0;
+    list-style: none;
+}
+.fooer__item-link {
+    text-decoration: none;
+    font-size: 1.2rem;
+    color: #737373;
+    padding: 2px 0;
+    display: flex;
+    align-items: center;
+}
+.fooer__item-link:hover {
+    color: var(--primay-color);
+}
+.footer__item-icon {
+    font-size: 1.6rem;
+    margin: -1px 8px 0 0;
+}
+.footer__download {
+    display: flex;
+}
+.footer__download-qr {
+    width: 80px;
+    height: 80px;
+    border:1px solid var(--border-color);
+}
+.footer__download-app {
+    flex: 1;
+    margin-left: 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.footer__download-app-img {
+    height: 16px;
+}
+.app-link {
+    padding-left: 0;
+    text-decoration: none;
+}
+.footer__bottom {
+    background-color: #f5f5f5;
+    min-height: 48px;
+    padding: 8px 0;
+    margin-top: 24px;
+ 
+}
+.footer__text {
+    margin: 0;
+    font-size: 1.4rem;
+    text-align: center;
+    color: #737373;
+}
